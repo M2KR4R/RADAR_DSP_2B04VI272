@@ -85,80 +85,141 @@ For v = 700 m/s → fd ≈ 46.7 kHz – which matches the logged values (~46‑4
 - This is not a fault‑masking system; it’s a simple fusion to show how redundancy improves robustness in simulation.
 
 
+
 -- Running the :: code and interpreting the logs --
 
    -- Excerpt from :: simulation results .. --
 
+
+   -- Excerpt from :: simulation results .. --
+
+
+
+<pre style="overflow-x: auto; white-space: pre; background-color: #f6f8fa; padding: 16px; border-radius: 6px; font-family: monospace;">
+
+
 22:00:42 [INFO] event=self_tests_start
+
 22:00:42 [INFO] Test 0 passed: complex PSD matches reference FFT layout
+
 22:00:42 [INFO] Test 1 passed: CFAR on noise OK
+
 22:00:43 [INFO] event=self_test_cfar_pfa_pass | empirical_PFA=6.7138671875e-07 frame_trigger_rate=0.011 nominal_PFA=1e-06 pfa_relative_error=0.32861328125 pfa_relative_tol=0.5
+
 22:00:43 [INFO] Test 1b passed: CFAR exponential-PSD (complex-Gaussian |bin|^2 model) empirical per-cell PFA=6.71387e-07 nominal=1e-06; frames_with_any_detection=11/1000
+
 22:00:43 [INFO] Test 2 passed: majority voting OK
+
 22:00:43 [INFO] Test 3 passed: estimate_target peak OK
+
 22:00:43 [INFO] event=self_tests_pass
+
 22:00:43 [INFO] event=simulation_start | branches=3 fs_khz=250.0 n=16384
+
 22:00:43 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:43 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:43 [INFO] event=dwell | fd_hz=48553.47 ground_truth_target='Y' psd_peak_to_training_mean_db=44.38 state='SEARCH' vel_m_s=728.302 votes='3/3'
+
 22:00:44 [INFO] event=tracker_transition | from_state='SEARCH' to_state='LOCKED'
+
 22:00:44 [INFO] event=dwell | fd_hz=27664.18 ground_truth_target='Y' psd_peak_to_training_mean_db=53.91 state='LOCKED' vel_m_s=610.8 votes='3/3'
+
 22:00:44 [INFO] event=dwell | fd_hz=27664.18 ground_truth_target='Y' psd_peak_to_training_mean_db=53.91 state='LOCKED' vel_m_s=610.8 votes='3/3'
+
 22:00:44 [INFO] event=dwell | fd_hz=27664.18 ground_truth_target='Y' psd_peak_to_training_mean_db=53.91 state='LOCKED' vel_m_s=610.8 votes='3/3'
+
 22:00:45 [INFO] event=tracker_transition | from_state='LOCKED' to_state='SEARCH'
+
 22:00:45 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:45 [INFO] event=dwell | fd_hz=-111068.73 ground_truth_target='N' psd_peak_to_training_mean_db=10.56 state='SEARCH' vel_m_s=-1666.031 votes='2/3'
+
 22:00:45 [INFO] event=tracker_transition | from_state='SEARCH' to_state='LOCKED'
+
 22:00:45 [INFO] event=dwell | fd_hz=46691.89 ground_truth_target='Y' psd_peak_to_training_mean_db=45.78 state='LOCKED' vel_m_s=-778.627 votes='3/3'
+
 22:00:46 [INFO] event=dwell | fd_hz=46691.89 ground_truth_target='N' psd_peak_to_training_mean_db=45.78 state='LOCKED' vel_m_s=-778.627 votes='2/3'
+
 22:00:46 [INFO] event=dwell | fd_hz=46691.89 ground_truth_target='N' psd_peak_to_training_mean_db=45.78 state='LOCKED' vel_m_s=-778.627 votes='0/3'
+
 22:00:46 [INFO] event=tracker_transition | from_state='LOCKED' to_state='SEARCH'
+
 22:00:46 [INFO] event=dwell | fd_hz=25527.95 ground_truth_target='Y' psd_peak_to_training_mean_db=56.43 state='SEARCH' vel_m_s=382.919 votes='3/3'
+
 22:00:47 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:47 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:47 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:47 [INFO] event=dwell | fd_hz=25299.07 ground_truth_target='Y' psd_peak_to_training_mean_db=56.77 state='SEARCH' vel_m_s=379.486 votes='3/3'
+
 22:00:48 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:48 [INFO] event=dwell | fd_hz=44799.8 ground_truth_target='Y' psd_peak_to_training_mean_db=44.36 state='SEARCH' vel_m_s=489.178 votes='3/3'
+
 22:00:48 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:49 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:49 [INFO] event=dwell | fd_hz=19882.2 ground_truth_target='N' psd_peak_to_training_mean_db=10.29 state='SEARCH' vel_m_s=405.807 votes='2/3'
+
 22:00:49 [INFO] event=tracker_transition | from_state='SEARCH' to_state='LOCKED'
+
 22:00:49 [INFO] event=dwell | fd_hz=24658.2 ground_truth_target='Y' psd_peak_to_training_mean_db=54.62 state='LOCKED' vel_m_s=389.439 votes='3/3'
+
 22:00:50 [INFO] event=dwell | fd_hz=24658.2 ground_truth_target='N' psd_peak_to_training_mean_db=54.62 state='LOCKED' vel_m_s=389.439 votes='2/3'
+
 22:00:50 [INFO] event=dwell | fd_hz=24658.2 ground_truth_target='N' psd_peak_to_training_mean_db=54.62 state='LOCKED' vel_m_s=389.439 votes='2/3'
+
 22:00:50 [INFO] event=tracker_transition | from_state='LOCKED' to_state='SEARCH'
+
 22:00:50 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:51 [INFO] event=dwell | fd_hz=24978.64 ground_truth_target='Y' psd_peak_to_training_mean_db=54.17 state='SEARCH' vel_m_s=374.68 votes='3/3'
+
 22:00:51 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:51 [INFO] event=dwell | fd_hz=26351.93 ground_truth_target='Y' psd_peak_to_training_mean_db=55.63 state='SEARCH' vel_m_s=382.404 votes='3/3'
+
 22:00:51 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:52 [INFO] event=dwell | fd_hz=48660.28 ground_truth_target='Y' psd_peak_to_training_mean_db=45.08 state='SEARCH' vel_m_s=534.13 votes='3/3'
+
 22:00:52 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:52 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:53 [INFO] event=dwell | fd_hz=0.0 ground_truth_target='N' psd_peak_to_training_mean_db=0.0 state='SEARCH' vel_m_s=0.0 votes='0/3'
+
 22:00:53 [INFO] event=dwell | fd_hz=44952.39 ground_truth_target='Y' psd_peak_to_training_mean_db=44.76 state='SEARCH' vel_m_s=597.974 votes='3/3'
+
 22:00:53 [INFO] event=tracker_transition | from_state='SEARCH' to_state='LOCKED'
+
 22:00:53 [INFO] event=dwell | fd_hz=24658.2 ground_truth_target='Y' psd_peak_to_training_mean_db=56.15 state='LOCKED' vel_m_s=492.804 votes='3/3'
+
 22:00:54 [INFO] event=dwell | fd_hz=24658.2 ground_truth_target='Y' psd_peak_to_training_mean_db=56.15 state='LOCKED' vel_m_s=492.804 votes='3/3'
+
 22:00:54 [INFO] event=dwell | fd_hz=24658.2 ground_truth_target='N' psd_peak_to_training_mean_db=56.15 state='LOCKED' vel_m_s=492.804 votes='0/3'
+
 22:00:54 [INFO] event=tracker_transition | from_state='LOCKED' to_state='SEARCH'
 
-.
-..
 
-| Field | Meaning |
-|-------|---------|
-| `ground_truth_target` | `Y` = a target was actually generated, `N` = noise only |
-| `state` | `SEARCH` (no track) or `LOCKED` (tracking) |
-| `votes` | e.g. `3/3` = all three branches detected a target in that dwell |
-| `fd_hz` | Estimated Doppler frequency (positive = approaching in this simulation) |
-| `vel_m_s` | Radial velocity from Doppler (positive = approaching) |
-| `psd_peak_to_training_mean_db` | PSD contrast metric (not real SNR, but useful for visualisation) |
+</pre>
 
 
--- When the tracker transitions between `SEARCH` and `LOCKED`, you’ll see a separate line:
-`event=tracker_transition | from_state='SEARCH' to_state='LOCKED'` --
+
+| Field                              | Meaning                                                                 |
+|------------------------------------|-------------------------------------------------------------------------|
+| `ground_truth_target`              | `Y` = a target was actually generated, `N` = noise only                 |
+| `state`                            | `SEARCH` (no track) or `LOCKED` (tracking)                              |
+| `votes`                            | e.g. `3/3` = all three branches detected a target in that dwell         |
+| `fd_hz`                            | Estimated Doppler frequency (positive = approaching in this simulation) |
+| `vel_m_s`                          | Radial velocity from Doppler (positive = approaching)                   |
+| `psd_peak_to_training_mean_db`     | PSD contrast metric (not real SNR, but useful for visualisation)        |
+
 
 
 

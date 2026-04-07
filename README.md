@@ -91,9 +91,6 @@ For v = 700 m/s → fd ≈ 46.7 kHz – which matches the logged values (~46‑4
    -- Excerpt from :: simulation results .. --
 
 
-   -- Excerpt from :: simulation results .. --
-
-
 
 <pre style="overflow-x: auto; white-space: pre; background-color: #f6f8fa; padding: 16px; border-radius: 6px; font-family: monospace;">
 
